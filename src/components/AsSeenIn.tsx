@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function AsSeenIn() {
-  // Define placeholder SVG logos
+  // Define placeholder SVG logos with text
   const logoSvgs = [
-    // Simplified brand SVG placeholders
+    // Simplified brand SVG placeholders with text
     `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="16" fill="white" font-style="italic">Femina</text></svg>`,
     `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="20" font-weight="bold" fill="white">LBB</text></svg>`,
     `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="18" fill="white" font-style="italic" letter-spacing="2">Vogue</text></svg>`,

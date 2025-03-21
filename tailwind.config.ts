@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -119,7 +120,7 @@ export default {
 						opacity: '1'
 					}
 				},
-				pulse: {
+				'pulse': {
 					'0%, 100%': {
 						opacity: '1'
 					},
