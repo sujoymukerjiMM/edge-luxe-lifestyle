@@ -17,12 +17,32 @@
       <h1>EDGE | Advanced Self-Care Device for Men</h1>
       <p class="hero-subtitle">Engineered for exceptional comfort with advanced vibration technology.</p>
       
-      <div class="product-image-container">
-        <img 
-          src="{{ product.featured_image | img_url: 'grande' }}" 
-          alt="{{ product.title }}" 
-          class="product-image"
-        >
+      <div class="product-carousel">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            {% for image in product.images limit: 8 %}
+              <div class="carousel-slide">
+                <img 
+                  src="{{ image | img_url: 'grande' }}" 
+                  alt="{{ product.title }} - View {{ forloop.index }}" 
+                  class="product-image"
+                  {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}
+                >
+              </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-prev">{% render 'icon-chevron-left' %}</button>
+          <button class="carousel-next">{% render 'icon-chevron-right' %}</button>
+        </div>
+      </div>
+      
+      <div class="as-seen-in">
+        <div class="as-seen-header">
+          <span>A S &nbsp;&nbsp;S E E N&nbsp;&nbsp; I N :</span>
+        </div>
+        <div class="as-seen-logos">
+          <img src="{{ 'as-seen-in.png' | asset_url }}" alt="As Seen In: Femina, LBB, Vogue, Forbes">
+        </div>
       </div>
       
       <p class="font-medium">Successfully sold out in two previous releases. EDGE is now available for limited preorders.</p>
@@ -98,19 +118,34 @@
       
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <div class="rating">★★★★★</div>
-          <p class="testimonial-text">"The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation."</p>
-          <p class="author">– Vihaan K., Mumbai, Verified Purchase (March 2023)</p>
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-1.jpg' | asset_url }}" alt="Customer 1">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">"The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation."</p>
+            <p class="author">– Vihaan K., Mumbai, Verified Purchase (March 2023)</p>
+          </div>
         </div>
         <div class="testimonial-card">
-          <div class="rating">★★★★★</div>
-          <p class="testimonial-text">"The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention."</p>
-          <p class="author">– Dev M., Bangalore, Verified Purchase (January 2023)</p>
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-2.jpg' | asset_url }}" alt="Customer 2">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">"The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention."</p>
+            <p class="author">– Dev M., Bangalore, Verified Purchase (January 2023)</p>
+          </div>
         </div>
         <div class="testimonial-card">
-          <div class="rating">★★★★½</div>
-          <p class="testimonial-text">"I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge."</p>
-          <p class="author">– Kunal S., Delhi, Verified Purchase (April 2023)</p>
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-3.jpg' | asset_url }}" alt="Customer 3">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★½</div>
+            <p class="testimonial-text">"I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge."</p>
+            <p class="author">– Kunal S., Delhi, Verified Purchase (April 2023)</p>
+          </div>
         </div>
       </div>
       
@@ -253,6 +288,11 @@
       "id": "waitlist_count",
       "label": "Waitlist Count",
       "default": 5764
+    },
+    {
+      "type": "image_picker",
+      "id": "as_seen_in_image",
+      "label": "As Seen In Image"
     }
   ],
   "presets": [

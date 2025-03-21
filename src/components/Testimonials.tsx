@@ -8,16 +8,19 @@ export default function Testimonials() {
       rating: 5,
       text: "The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation.",
       author: "Vihaan K., Mumbai, Verified Purchase (March 2023)",
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       rating: 5,
       text: "The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention.",
       author: "Dev M., Bangalore, Verified Purchase (January 2023)",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       rating: 4.5,
       text: "I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge.",
       author: "Kunal S., Delhi, Verified Purchase (April 2023)",
+      image: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
   ];
 
@@ -98,15 +101,24 @@ export default function Testimonials() {
             <motion.div
               key={index}
               variants={item}
-              className="testimonial-card flex flex-col h-full"
+              className="testimonial-card flex flex-col h-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
             >
-              <div className="flex items-center mb-3">
-                {renderStars(testimonial.rating)}
+              <div className="h-32 overflow-hidden">
+                <img 
+                  src={testimonial.image} 
+                  alt={`Customer ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <p className="italic text-charcoal/80 mb-4 flex-grow">
-                "{testimonial.text}"
-              </p>
-              <p className="text-sm font-medium">– {testimonial.author}</p>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  {renderStars(testimonial.rating)}
+                </div>
+                <p className="italic text-charcoal/80 mb-4 flex-grow">
+                  "{testimonial.text}"
+                </p>
+                <p className="text-sm font-medium">– {testimonial.author}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

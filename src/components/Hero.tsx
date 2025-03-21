@@ -3,8 +3,21 @@ import React from "react";
 import { AnimatedGradient } from "./ui/animated-gradient";
 import TrustBadges from "./TrustBadges";
 import { motion } from "framer-motion";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import AsSeenIn from "./AsSeenIn";
 
 export default function Hero() {
+  const productImages = [
+    "https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1631558996800-a39e133195de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1630410672123-9388623ab661?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1605236453806-6ff36851218e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1609942072337-c3370e820998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1635311914102-b7d1c0db6d8f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "https://images.unsplash.com/photo-1617778368431-f97343a411ab?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3",
+  ];
+
   return (
     <AnimatedGradient className="pt-32 pb-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl">
@@ -28,20 +41,35 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mb-10"
         >
-          <div className="relative overflow-hidden rounded-xl shadow-xl max-w-2xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3"
-              alt="EDGE Personal Wellness Device"
-              className="w-full h-auto object-cover"
-              loading="eager"
-            />
+          <div className="product-carousel relative max-w-2xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {productImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative overflow-hidden rounded-xl shadow-xl">
+                      <img
+                        src={image}
+                        alt={`EDGE Personal Wellness Device - View ${index + 1}`}
+                        className="w-full h-auto object-cover aspect-[4/3]"
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+            </Carousel>
           </div>
         </motion.div>
+
+        <AsSeenIn />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-12"
         >
           <p className="font-medium text-lg mb-4">
             Successfully sold out in two previous releases. EDGE is now available for limited preorders.
