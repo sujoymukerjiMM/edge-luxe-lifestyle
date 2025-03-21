@@ -1,9 +1,10 @@
+
 import React from "react";
 import { AnimatedGradient } from "./ui/animated-gradient";
 import TrustBadges from "./TrustBadges";
 import { motion } from "framer-motion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
-import AsSeenIn from "./AsSeenIn";
+
 export default function Hero() {
   const productImages = ["https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1631558996800-a39e133195de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1630410672123-9388623ab661?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1605236453806-6ff36851218e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1609942072337-c3370e820998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1635311914102-b7d1c0db6d8f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1617778368431-f97343a411ab?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3"];
   const productGifs = ["https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1631643690103-aaa1ad5f0cc9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3", "https://images.unsplash.com/photo-1613483187636-c2024013d54a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"];
@@ -75,8 +76,6 @@ export default function Hero() {
               </div>)}
           </div>
         </motion.div>
-
-        <AsSeenIn />
 
         <motion.div initial={{
         opacity: 0,
