@@ -1,4 +1,3 @@
-
 :root {
   --off-white: #F8F6F3;
   --grey-light: #E5E5E5;
@@ -163,6 +162,66 @@ p {
   right: 1rem;
 }
 
+/* Product Animation Showcase */
+.product-animation-showcase {
+  margin: 3rem auto;
+  max-width: 42rem;
+}
+
+.animation-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .animation-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.animation-item {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.animation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.animation-media {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.animation-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animation-caption {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.animation-caption p {
+  font-weight: 500;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
 /* As Seen In Section */
 .as-seen-in {
   margin: 2rem auto 3rem;
@@ -193,10 +252,35 @@ p {
   overflow: hidden;
 }
 
-.as-seen-logos img {
-  width: 100%;
-  height: auto;
-  display: block;
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.brand-logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.brand-logo:nth-child(1) {
+  font-family: serif;
+  font-size: 1.4rem;
+}
+
+.brand-logo:nth-child(2) {
+  font-weight: 800;
+}
+
+.brand-logo:nth-child(3) {
+  font-family: serif;
+  font-style: italic;
+  letter-spacing: 0.15em;
+  font-size: 1.8rem;
 }
 
 .product-image-container {
@@ -206,12 +290,6 @@ p {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.product-image {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .text-description {
@@ -233,7 +311,8 @@ p {
 .trust-badges {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin: 2.5rem 0;
 }
 
@@ -350,6 +429,171 @@ p {
   color: var(--yellow);
 }
 
+/* Features Carousel */
+.features-carousel {
+  margin: 3rem auto;
+  max-width: 56rem;
+}
+
+.features-carousel-container {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.features-carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+  height: 400px;
+}
+
+@media (min-width: 768px) {
+  .feature-slide {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.feature-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  z-index: 5;
+}
+
+.feature-slide-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.feature-slide-content p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.feature-slide .feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  background-color: rgba(247, 201, 72, 0.2);
+  border-radius: 9999px;
+  color: var(--yellow);
+}
+
+.feature-carousel-prev,
+.feature-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--charcoal);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.feature-carousel-prev:hover,
+.feature-carousel-next:hover {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-carousel-prev {
+  left: 1rem;
+}
+
+.feature-carousel-next {
+  right: 1rem;
+}
+
+/* Technical Specifications */
+.tech-specs {
+  background-color: #f9f9f9;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 42rem;
+}
+
+.tech-specs h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.spec-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.spec-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-color: rgba(247, 201, 72, 0.1);
+  border-radius: 9999px;
+  color: var(--yellow);
+  flex-shrink: 0;
+}
+
+.spec-content h4 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.spec-content p {
+  font-size: 0.875rem;
+  color: rgba(45, 45, 45, 0.7);
+  margin: 0;
+}
+
 /* Testimonials Section */
 .testimonials-section {
   padding: 5rem 0;
@@ -432,8 +676,6 @@ p {
   margin-bottom: 1.25rem;
 }
 
-/* ... keep existing code (remaining CSS for Technology Section, Lifestyle Section, etc.) */
-
 /* Animation Effect */
 .shine-effect {
   position: relative;
@@ -480,8 +722,10 @@ p {
   }
   
   .trust-badges {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
   }
   

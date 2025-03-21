@@ -25,7 +25,7 @@ export default function TrustBadges() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
+        className="flex flex-row items-center justify-center gap-8 md:gap-16 flex-wrap"
       >
         {badges.map((badge, index) => (
           <motion.div

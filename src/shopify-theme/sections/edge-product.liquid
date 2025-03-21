@@ -36,12 +36,48 @@
         </div>
       </div>
       
+      <!-- Product Animation Showcase -->
+      <div class="product-animation-showcase">
+        <h2 class="animation-title">Experience the Innovation</h2>
+        <div class="animation-grid">
+          <div class="animation-item">
+            <div class="animation-media">
+              <img src="{{ 'product-animation-1.jpg' | asset_url }}" alt="Multiple Vibration Patterns">
+            </div>
+            <div class="animation-caption">
+              <p>Multiple Vibration Patterns</p>
+            </div>
+          </div>
+          <div class="animation-item">
+            <div class="animation-media">
+              <img src="{{ 'product-animation-2.jpg' | asset_url }}" alt="Premium Soft-Touch Material">
+            </div>
+            <div class="animation-caption">
+              <p>Premium Soft-Touch Material</p>
+            </div>
+          </div>
+          <div class="animation-item">
+            <div class="animation-media">
+              <img src="{{ 'product-animation-3.jpg' | asset_url }}" alt="Discreet & Portable Design">
+            </div>
+            <div class="animation-caption">
+              <p>Discreet & Portable Design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div class="as-seen-in">
         <div class="as-seen-header">
           <span>A S &nbsp;&nbsp;S E E N&nbsp;&nbsp; I N :</span>
         </div>
         <div class="as-seen-logos">
-          <img src="{{ 'as-seen-in.png' | asset_url }}" alt="As Seen In: Femina, LBB, Vogue, Forbes">
+          <div class="logo-container">
+            <span class="brand-logo">Femina</span>
+            <span class="brand-logo">LBB</span>
+            <span class="brand-logo">Vogue</span>
+            <span class="brand-logo">Forbes</span>
+          </div>
         </div>
       </div>
       
@@ -79,34 +115,80 @@
       <h2>Precision Engineering Meets Personal Wellness</h2>
       <p>EDGE combines a soft, premium silicone exterior with 10 carefully calibrated vibration patterns. The 360° wraparound design and easy-maintenance features make this the most advanced addition to your self-care collection.</p>
       
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">{% render 'icon-vibrate' %}</div>
-            <h3>Dual-Technology Innovation</h3>
+      <!-- Features Carousel -->
+      <div class="features-carousel">
+        <div class="features-carousel-container">
+          <div class="features-carousel-track">
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-vibrate' %}</div>
+                <h3>Dual-Technology Innovation</h3>
+                <p>Premium soft-touch material with integrated vibration technology offering a uniquely comfortable experience.</p>
+              </div>
+              <img src="{{ 'feature-1.jpg' | asset_url }}" alt="Dual-Technology Innovation" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-droplets' %}</div>
+                <h3>Hygienic Design</h3>
+                <p>Open-ended structure with water-resistant materials allows for thorough cleaning and proper maintenance.</p>
+              </div>
+              <img src="{{ 'feature-2.jpg' | asset_url }}" alt="Hygienic Design" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-shield' %}</div>
+                <h3>Privacy-Focused Design</h3>
+                <p>Protective case and compact form factor (just 15.3cm × 6.8cm) ensures discretion and convenient storage.</p>
+              </div>
+              <img src="{{ 'feature-3.jpg' | asset_url }}" alt="Privacy-Focused Design" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-sliders' %}</div>
+                <h3>Customizable Experience</h3>
+                <p>10 precisely engineered intensity settings from gentle (27Hz) to powerful (82Hz) for a personalized experience.</p>
+              </div>
+              <img src="{{ 'feature-4.jpg' | asset_url }}" alt="Customizable Experience" class="feature-image">
+            </div>
           </div>
-          <p>Premium soft-touch material with integrated vibration technology offering a uniquely comfortable experience.</p>
+          <button class="feature-carousel-prev">{% render 'icon-chevron-left' %}</button>
+          <button class="feature-carousel-next">{% render 'icon-chevron-right' %}</button>
         </div>
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">{% render 'icon-droplets' %}</div>
-            <h3>Hygienic Design</h3>
+      </div>
+      
+      <!-- Technical Specifications -->
+      <div class="tech-specs">
+        <h3>Technical Specifications</h3>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-vibrate' %}</div>
+            <div class="spec-content">
+              <h4>Vibration Range</h4>
+              <p>27Hz (gentle) to 82Hz (intense) with 10 unique patterns</p>
+            </div>
           </div>
-          <p>Open-ended structure with water-resistant materials allows for thorough cleaning and proper maintenance.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">{% render 'icon-shield' %}</div>
-            <h3>Privacy-Focused Design</h3>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-shield' %}</div>
+            <div class="spec-content">
+              <h4>Material</h4>
+              <p>Medical-grade silicone with soft-touch texture</p>
+            </div>
           </div>
-          <p>Protective case and compact form factor (just 15.3cm × 6.8cm) ensures discretion and convenient storage.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">{% render 'icon-sliders' %}</div>
-            <h3>Customizable Experience</h3>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-droplets' %}</div>
+            <div class="spec-content">
+              <h4>Water Resistance</h4>
+              <p>IPX7 rated for easy cleaning and maintenance</p>
+            </div>
           </div>
-          <p>10 precisely engineered intensity settings from gentle (27Hz) to powerful (82Hz) for a personalized experience.</p>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-sliders' %}</div>
+            <div class="spec-content">
+              <h4>Dimensions</h4>
+              <p>15.3cm × 6.8cm, compact and discreet design</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -293,6 +375,49 @@
       "type": "image_picker",
       "id": "as_seen_in_image",
       "label": "As Seen In Image"
+    },
+    {
+      "type": "header",
+      "content": "Product Animations"
+    },
+    {
+      "type": "image_picker",
+      "id": "animation_1",
+      "label": "Animation Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "animation_2",
+      "label": "Animation Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "animation_3",
+      "label": "Animation Image 3"
+    },
+    {
+      "type": "header",
+      "content": "Feature Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image_1",
+      "label": "Feature Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image_2",
+      "label": "Feature Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image_3",
+      "label": "Feature Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image_4",
+      "label": "Feature Image 4"
     }
   ],
   "presets": [
