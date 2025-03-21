@@ -7,6 +7,8 @@ import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import Technology from "@/components/Technology";
 import LifestyleSection from "@/components/LifestyleSection";
+import Reviews from "@/components/Reviews";
+import AsSeenIn from "@/components/AsSeenIn";
 import PreOrder from "@/components/PreOrder";
 import StickyButton from "@/components/StickyButton";
 
@@ -53,7 +55,9 @@ const Index = () => {
         >
           <Hero />
           <Features />
+          <AsSeenIn />
           <Testimonials />
+          <Reviews />
           <Technology />
           <LifestyleSection />
           <PreOrder />
