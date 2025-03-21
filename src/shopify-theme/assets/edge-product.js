@@ -1,118 +1,77 @@
 
-// Edge Product Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-  // Product Carousel
-  const productCarousel = document.querySelector('.carousel-track');
-  const productSlides = document.querySelectorAll('.carousel-slide');
-  const prevButton = document.querySelector('.carousel-prev');
-  const nextButton = document.querySelector('.carousel-next');
+  // Product Carousel Functionality
+  const carousel = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const slideWidth = slides[0].clientWidth;
   let currentIndex = 0;
-  const slideCount = productSlides.length;
+  let maxIndex = slides.length - 1;
 
-  if (productCarousel && slideCount > 0) {
-    function updateCarousel() {
-      const slideWidth = productSlides[0].offsetWidth;
-      productCarousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  function goToSlide(index) {
+    if (index < 0) {
+      index = maxIndex;
+    } else if (index > maxIndex) {
+      index = 0;
     }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slideCount;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-      updateCarousel();
-    }
-
-    // Set up event listeners
-    if (nextButton) nextButton.addEventListener('click', nextSlide);
-    if (prevButton) prevButton.addEventListener('click', prevSlide);
-
-    // Auto advance slides
-    let carouselInterval = setInterval(nextSlide, 5000);
-
-    // Pause auto-advance on hover
-    if (productCarousel) {
-      productCarousel.addEventListener('mouseenter', () => {
-        clearInterval(carouselInterval);
-      });
-      
-      productCarousel.addEventListener('mouseleave', () => {
-        carouselInterval = setInterval(nextSlide, 5000);
-      });
-    }
-
-    // Initialize
-    updateCarousel();
-    
-    // Update on resize
-    window.addEventListener('resize', updateCarousel);
+    currentIndex = index;
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  // Features Carousel
+  prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+  });
+
+  // Features Carousel Functionality
   const featuresCarousel = document.querySelector('.features-carousel-track');
   const featureSlides = document.querySelectorAll('.feature-slide');
-  const featurePrevButton = document.querySelector('.feature-carousel-prev');
-  const featureNextButton = document.querySelector('.feature-carousel-next');
+  const featurePrevBtn = document.querySelector('.feature-carousel-prev');
+  const featureNextBtn = document.querySelector('.feature-carousel-next');
   let featureCurrentIndex = 0;
-  const featureSlideCount = featureSlides.length;
+  let featureMaxIndex = Math.ceil(featureSlides.length / 2) - 1;
 
-  if (featuresCarousel && featureSlideCount > 0) {
-    function updateFeaturesCarousel() {
-      const isDesktop = window.innerWidth >= 768;
-      const slidesToShow = isDesktop ? 2 : 1;
-      const slideWidth = featureSlides[0].offsetWidth;
-      
-      // Ensure we don't go beyond available slides
-      const maxIndex = featureSlideCount - slidesToShow;
-      if (featureCurrentIndex > maxIndex) featureCurrentIndex = maxIndex;
-      
-      featuresCarousel.style.transform = `translateX(-${featureCurrentIndex * slideWidth}px)`;
+  function goToFeatureSlide(index) {
+    if (index < 0) {
+      index = featureMaxIndex;
+    } else if (index > featureMaxIndex) {
+      index = 0;
     }
-
-    function nextFeatureSlide() {
-      const isDesktop = window.innerWidth >= 768;
-      const slidesToShow = isDesktop ? 2 : 1;
-      const maxIndex = featureSlideCount - slidesToShow;
-      
-      if (featureCurrentIndex < maxIndex) {
-        featureCurrentIndex++;
-      } else {
-        featureCurrentIndex = 0;
-      }
-      
-      updateFeaturesCarousel();
-    }
-
-    function prevFeatureSlide() {
-      const isDesktop = window.innerWidth >= 768;
-      const slidesToShow = isDesktop ? 2 : 1;
-      const maxIndex = featureSlideCount - slidesToShow;
-      
-      if (featureCurrentIndex > 0) {
-        featureCurrentIndex--;
-      } else {
-        featureCurrentIndex = maxIndex;
-      }
-      
-      updateFeaturesCarousel();
-    }
-
-    // Set up event listeners
-    if (featureNextButton) featureNextButton.addEventListener('click', nextFeatureSlide);
-    if (featurePrevButton) featurePrevButton.addEventListener('click', prevFeatureSlide);
-
-    // Initialize
-    updateFeaturesCarousel();
+    featureCurrentIndex = index;
     
-    // Update on resize
-    window.addEventListener('resize', updateFeaturesCarousel);
+    // On mobile, show one slide at a time
+    if (window.innerWidth < 768) {
+      featuresCarousel.style.transform = `translateX(-${featureCurrentIndex * 100}%)`;
+    } else {
+      // On desktop, show two slides at a time
+      featuresCarousel.style.transform = `translateX(-${featureCurrentIndex * 100}%)`;
+    }
   }
+
+  featurePrevBtn.addEventListener('click', () => {
+    goToFeatureSlide(featureCurrentIndex - 1);
+  });
+
+  featureNextBtn.addEventListener('click', () => {
+    goToFeatureSlide(featureCurrentIndex + 1);
+  });
+
+  // Handle window resize for responsive carousels
+  window.addEventListener('resize', () => {
+    // Recalculate feature slides per view
+    featureMaxIndex = window.innerWidth < 768 ? featureSlides.length - 1 : Math.ceil(featureSlides.length / 2) - 1;
+    goToFeatureSlide(0);
+    
+    // Reset main carousel
+    goToSlide(0);
+  });
 
   // Smooth scroll for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  
   anchorLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href').substring(1);
@@ -121,25 +80,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (targetElement) {
         e.preventDefault();
         window.scrollTo({
-          top: targetElement.offsetTop - 100,
+          top: targetElement.offsetTop - 100, // Offset for header
           behavior: 'smooth'
         });
       }
     });
   });
 
-  // Logo scrolling
-  function duplicateLogos() {
-    const scrollContainers = document.querySelectorAll('.logo-scroll');
-    
-    scrollContainers.forEach(container => {
-      const scrollInner = container.querySelector('.logo-scroll-inner');
-      if (scrollInner) {
-        const clone = scrollInner.cloneNode(true);
-        container.appendChild(clone);
-      }
-    });
-  }
-  
-  duplicateLogos();
+  // Sticky Header
+  const header = document.querySelector('.edge-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
 });
