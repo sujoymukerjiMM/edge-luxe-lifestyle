@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Badge } from "./ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Testimonials() {
   const testimonials = [
@@ -108,15 +109,19 @@ export default function Testimonials() {
               variants={item}
               className="testimonial-card flex flex-col h-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
             >
-              <div className="h-32 overflow-hidden">
-                <img 
-                  src={testimonial.image} 
-                  alt={`Customer ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex justify-center pt-6">
+                <Avatar className="w-24 h-24">
+                  <AvatarImage 
+                    src={testimonial.image} 
+                    alt={`Customer ${index + 1}`}
+                  />
+                  <AvatarFallback className="bg-gray-100 text-charcoal">
+                    {testimonial.author.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
               </div>
               <div className="p-6">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center justify-center mb-3">
                   {renderStars(testimonial.rating)}
                 </div>
                 <p className="italic text-charcoal/80 mb-4 flex-grow">

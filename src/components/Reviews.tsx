@@ -75,16 +75,11 @@ export default function Reviews() {
               <div className="mt-6 grid grid-cols-3 gap-2">
                 {[...Array(9)].map((_, i) => (
                   <div key={i} className="aspect-square rounded-md overflow-hidden">
-                    <Avatar className="w-full h-full rounded-full border border-gray-200">
-                      <AvatarImage 
-                        src={`https://d3g5hqndtiniji.cloudfront.net/images/8aad07d8-99d9-48ed-bff3-477a000140df/placeholder-${i+1}.jpg`} 
-                        alt="Customer review" 
-                        className="w-full h-full object-cover"
-                      />
-                      <AvatarFallback className="bg-gray-100 text-charcoal">
-                        {String.fromCharCode(65 + i)}
-                      </AvatarFallback>
-                    </Avatar>
+                    <img 
+                      src={`https://d3g5hqndtiniji.cloudfront.net/images/8aad07d8-99d9-48ed-bff3-477a000140df/placeholder-${i+1}.jpg`} 
+                      alt={`Customer review ${i+1}`} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 ))}
               </div>
