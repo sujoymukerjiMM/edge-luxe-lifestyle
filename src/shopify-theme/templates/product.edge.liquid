@@ -1,0 +1,18 @@
+
+{% section 'edge-product' %}
+
+<style>
+  /* Hide default breadcrumbs, product info, etc. for the EDGE product page */
+  {% if product.handle == 'edge-power-stroker' %}
+    .shopify-section:not(.shopify-section-edge-product) {
+      display: none;
+    }
+    
+    #shopify-section-header,
+    #shopify-section-footer {
+      display: block;
+    }
+  {% endif %}
+</style>
+
+{{ 'edge-product.css' | asset_url | stylesheet_tag }}

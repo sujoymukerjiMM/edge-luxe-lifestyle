@@ -1,12 +1,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Vibration, Droplets, Shield, Sliders } from "lucide-react";
+import { Vibrate, Droplets, Shield, Sliders } from "lucide-react";
 
 export default function Features() {
   const features = [
     {
-      icon: <Vibration className="h-6 w-6 text-yellow" />,
+      icon: <Vibrate className="h-6 w-6 text-yellow" />,
       title: "Dual-Technology Innovation",
       description:
         "Premium soft-touch material with integrated vibration technology offering a uniquely comfortable experience.",

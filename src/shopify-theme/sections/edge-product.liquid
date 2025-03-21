@@ -1,0 +1,265 @@
+
+<div class="edge-product-container">
+  <div class="edge-header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo-link">
+          <img src="{{ 'mymuse-logo.png' | asset_url }}" alt="{{ shop.name }}" class="logo">
+        </a>
+        <a href="#preorder" class="btn-primary">Reserve Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-section">
+    <div class="container">
+      <span class="limited-tag shine-effect">LIMITED PREORDER</span>
+      <h1>EDGE | Advanced Self-Care Device for Men</h1>
+      <p class="hero-subtitle">Engineered for exceptional comfort with advanced vibration technology.</p>
+      
+      <div class="product-image-container">
+        <img 
+          src="{{ product.featured_image | img_url: 'grande' }}" 
+          alt="{{ product.title }}" 
+          class="product-image"
+        >
+      </div>
+      
+      <p class="font-medium">Successfully sold out in two previous releases. EDGE is now available for limited preorders.</p>
+      <p class="text-description">A premium personal wellness device designed to enhance your self-care routine — with complete discretion.</p>
+      
+      <form method="post" action="/cart/add" id="product-form-{{ product.id }}">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="btn-primary shine-effect">
+          Reserve EDGE Now →
+        </button>
+      </form>
+      
+      <p class="small-text">Preorder today. Only 1,287 units available. Ships in unmarked packaging.</p>
+      
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-lock' %}</div>
+          <span>Secure Payment</span>
+        </div>
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-shield' %}</div>
+          <span>Privacy Guaranteed</span>
+        </div>
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-truck' %}</div>
+          <span>Discreet Shipping</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="container">
+      <h2>Precision Engineering Meets Personal Wellness</h2>
+      <p>EDGE combines a soft, premium silicone exterior with 10 carefully calibrated vibration patterns. The 360° wraparound design and easy-maintenance features make this the most advanced addition to your self-care collection.</p>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon">{% render 'icon-vibrate' %}</div>
+            <h3>Dual-Technology Innovation</h3>
+          </div>
+          <p>Premium soft-touch material with integrated vibration technology offering a uniquely comfortable experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon">{% render 'icon-droplets' %}</div>
+            <h3>Hygienic Design</h3>
+          </div>
+          <p>Open-ended structure with water-resistant materials allows for thorough cleaning and proper maintenance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon">{% render 'icon-shield' %}</div>
+            <h3>Privacy-Focused Design</h3>
+          </div>
+          <p>Protective case and compact form factor (just 15.3cm × 6.8cm) ensures discretion and convenient storage.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon">{% render 'icon-sliders' %}</div>
+            <h3>Customizable Experience</h3>
+          </div>
+          <p>10 precisely engineered intensity settings from gentle (27Hz) to powerful (82Hz) for a personalized experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonials-section">
+    <div class="container">
+      <h2>India's Top-Rated Self-Care Device for Men — Now Back by Popular Demand</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="testimonial-text">"The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation."</p>
+          <p class="author">– Vihaan K., Mumbai, Verified Purchase (March 2023)</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="testimonial-text">"The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention."</p>
+          <p class="author">– Dev M., Bangalore, Verified Purchase (January 2023)</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="rating">★★★★½</div>
+          <p class="testimonial-text">"I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge."</p>
+          <p class="author">– Kunal S., Delhi, Verified Purchase (April 2023)</p>
+        </div>
+      </div>
+      
+      <div class="waitlist-cta">
+        <p class="waitlist-headline">⭐ Sold out twice since launch. Exactly 5,764 people on the current waitlist.</p>
+        <a href="#preorder" class="btn-secondary shine-effect">Join the Waitlist →</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="technology-section">
+    <div class="container">
+      <h2>Advanced Technology for Modern Self-Care</h2>
+      <p>EDGE represents a new standard in personal wellness devices for men. Our most sophisticated design combines:</p>
+      
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Premium Comfort Materials</h3>
+            <p>Medical-grade silicone with precisely engineered texture patterns for optimal comfort during extended use.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Multi-pattern Technology</h3>
+            <p>10 distinct sensation patterns with adjustable intensity levels, from subtle (27Hz) to powerful (82Hz).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Ergonomic Design</h3>
+            <p>360° form-fitting design with flexibility to accommodate different preferences and ensure complete comfort.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Practical Maintenance</h3>
+            <p>Water-resistant design (IPX7 rated) for thorough cleaning and long-term durability.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="specs-table">
+        <div class="spec-row">
+          <div class="spec-label">Materials</div>
+          <div class="spec-value">Body-safe silicone sleeve + ABS case (BPA-free)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Battery</div>
+          <div class="spec-value">1200mAh Li-ion rechargeable (USB-C, 2.5 hour runtime)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Sound Level</div>
+          <div class="spec-value">Ultra-quiet (≤40dB at maximum setting)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Dimensions</div>
+          <div class="spec-value">15.3cm × 6.8cm, 187g, travel-sized with matte black finish</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Warranty</div>
+          <div class="spec-value">12-month manufacturer's warranty against defects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="lifestyle-section">
+    <div class="container">
+      <div class="lifestyle-container">
+        <div class="lifestyle-content">
+          <h2>Modern Technology for Your Wellness Routine</h2>
+          <p>You update your smartphone. You upgrade your fitness tracker. EDGE helps you enhance your personal care routine with the same attention to quality and innovation — with complete privacy and confidence.</p>
+          <p class="highlight-text">Our 98.3% satisfaction rating from 3,426 verified customers speaks to our commitment to quality and discretion.</p>
+        </div>
+        <div class="lifestyle-image">
+          <img src="{{ 'lifestyle-edge.jpg' | asset_url }}" alt="Modern Lifestyle">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="preorder" class="preorder-section">
+    <div class="container">
+      <h2>Limited Release: Only 1,287 Units Available</h2>
+      <p>EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Reserve yours now to avoid disappointment.</p>
+      
+      <div class="preorder-card">
+        <div class="checkmark-icon">{% render 'icon-check' %}</div>
+        <form method="post" action="/cart/add" id="product-form-footer-{{ product.id }}">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" class="btn-primary shine-effect">
+            Reserve EDGE Now →
+          </button>
+        </form>
+        <p class="small-text">Ships in plain packaging. No payment charged until product ships. Estimated delivery: 3-4 weeks.</p>
+      </div>
+      
+      <p class="terms-text">
+        By ordering, you agree to our <a href="/pages/terms-of-service">Terms of Service</a> and <a href="/pages/privacy-policy">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+  
+  <div class="sticky-button">
+    <a href="#preorder" class="btn-primary">Reserve EDGE Now →</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "EDGE Product Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Limited Tag Text",
+      "default": "LIMITED PREORDER"
+    },
+    {
+      "type": "header",
+      "content": "Units Available"
+    },
+    {
+      "type": "number",
+      "id": "units_available",
+      "label": "Units Available",
+      "default": 1287
+    },
+    {
+      "type": "number",
+      "id": "waitlist_count",
+      "label": "Waitlist Count",
+      "default": 5764
+    }
+  ],
+  "presets": [
+    {
+      "name": "EDGE Product Page",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
