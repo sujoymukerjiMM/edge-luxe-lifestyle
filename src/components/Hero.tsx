@@ -88,7 +88,7 @@ export default function Hero() {
         duration: 0.5,
         delay: 0.6
       }} className="mt-12">
-          <p className="font-medium text-lg mb-4">Previously sold out twice in 3 months. EDGE is now available for pre-orders for a limited time.</p>
+          <p className="font-medium text-lg mb-4">Sold out twice in 3 months. EDGE is now available for pre-orders for a limited time.</p>
           <p className="text-charcoal/80 mb-8 max-w-2xl mx-auto">
             A premium personal wellness device designed to enhance your self-care routine — with complete discretion.
           </p>
