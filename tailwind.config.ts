@@ -152,7 +152,7 @@ export default {
 				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				'rotate-slow': 'rotate-slow 15s linear infinite',
 				'shimmer': 'shimmer 2s infinite',
-				'scroll': 'scroll 25s linear infinite',
+				'scroll': 'scroll 20s linear infinite', // Made scroll a bit faster
 			},
 			fontFamily: {
 				sans: ['Figtree', 'sans-serif'],
