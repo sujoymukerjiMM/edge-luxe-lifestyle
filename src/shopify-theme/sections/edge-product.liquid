@@ -1,4 +1,3 @@
-
 <div class="edge-product-container">
   <div class="edge-header">
     <div class="container">
@@ -171,6 +170,12 @@
         <div class="product-media-item">
           <img src="{{ 'product-detail-6.jpg' | asset_url }}" alt="EDGE Device - Size Comparison" loading="lazy">
         </div>
+      </div>
+      
+      <!-- Theme Toggle Example -->
+      <div class="theme-toggle">
+        <span class="theme-toggle-icon">{% render 'icon-sun' %}</span>
+        {% render 'toggle-switch', id: 'theme-mode', label: 'Dark Mode' %}
       </div>
     </div>
   </div>
@@ -564,3 +569,5 @@
   ]
 }
 {% endschema %}
+
+{{ 'toggle-switch.js' | asset_url | script_tag }}

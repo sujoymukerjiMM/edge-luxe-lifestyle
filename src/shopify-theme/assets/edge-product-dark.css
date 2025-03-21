@@ -1,0 +1,47 @@
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --off-white: #1a1a1a;
+  --pearl-white: #121212;
+  --grey-light: #2a2a2a;
+  --grey-medium: #3a3a3a;
+  --charcoal: #e0e0e0;
+  --yellow: #F7C948; /* Keep yellow the same for contrast */
+  --black: #ffffff;
+  
+  color: var(--charcoal);
+  background-color: var(--pearl-white);
+}
+
+body.dark-mode .edge-product-container {
+  background-color: var(--pearl-white);
+  color: var(--charcoal);
+}
+
+body.dark-mode .edge-header {
+  background-color: rgba(18, 18, 18, 0.8);
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .animation-item,
+body.dark-mode .waitlist-cta,
+body.dark-mode .preorder-card,
+body.dark-mode .tech-specs {
+  background-color: var(--grey-light);
+  border-color: var(--grey-medium);
+}
+
+body.dark-mode .btn-secondary {
+  background-color: var(--charcoal);
+  color: var(--pearl-white);
+}
+
+body.dark-mode .animation-caption,
+body.dark-mode .verified-badge {
+  background-color: var(--grey-medium);
+}
+
+body.dark-mode .as-seen-logos {
+  background: linear-gradient(to right, #121212, #2a2a2a, #121212);
+}
