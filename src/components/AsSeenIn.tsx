@@ -3,12 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function AsSeenIn() {
-  // Define the logos that will be shown in the "As Seen In" section
-  const logos = [
-    { name: "Femina", width: "100px" },
-    { name: "LBB", width: "70px" },
-    { name: "Vogue", width: "120px" },
-    { name: "Forbes", width: "110px" }
+  // Define placeholder SVG logos
+  const logoSvgs = [
+    // Simplified brand SVG placeholders
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="16" fill="white" font-style="italic">Femina</text></svg>`,
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="20" font-weight="bold" fill="white">LBB</text></svg>`,
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="18" fill="white" font-style="italic" letter-spacing="2">Vogue</text></svg>`,
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="16" fill="white">Forbes</text></svg>`,
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="16" fill="white">GQ</text></svg>`,
+    `<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="10" y="25" font-family="Figtree, sans-serif" font-size="16" fill="white">Times</text></svg>`,
   ];
 
   return (
@@ -24,22 +27,25 @@ export default function AsSeenIn() {
             A S&nbsp;&nbsp;S E E N&nbsp;&nbsp;I N :
           </span>
         </div>
-        <div className="flex justify-around items-center px-8 py-2">
-          {logos.map((logo, index) => (
-            <div 
-              key={index} 
-              className="text-white font-serif font-bold"
-              style={{
-                fontSize: logo.name === "Vogue" ? "1.8rem" : "1.4rem",
-                fontStyle: logo.name === "Vogue" ? "italic" : "normal",
-                letterSpacing: logo.name === "Vogue" ? "0.15em" : "normal",
-                fontWeight: logo.name === "LBB" ? "800" : "bold",
-                opacity: 0.9
-              }}
-            >
-              {logo.name}
-            </div>
-          ))}
+        
+        {/* Scrolling logo container */}
+        <div className="relative flex overflow-x-hidden">
+          <div className="flex items-center py-2 animate-scroll whitespace-nowrap">
+            {logoSvgs.map((svg, index) => (
+              <div key={`logo-1-${index}`} className="mx-4 md:mx-8 h-8 md:h-10">
+                <div dangerouslySetInnerHTML={{ __html: svg }} />
+              </div>
+            ))}
+          </div>
+          
+          {/* Duplicate set of logos for seamless scrolling */}
+          <div className="flex items-center py-2 animate-scroll whitespace-nowrap" aria-hidden="true">
+            {logoSvgs.map((svg, index) => (
+              <div key={`logo-2-${index}`} className="mx-4 md:mx-8 h-8 md:h-10">
+                <div dangerouslySetInnerHTML={{ __html: svg }} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>

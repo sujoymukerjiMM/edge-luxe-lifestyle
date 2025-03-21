@@ -40,7 +40,7 @@ export default function StickyButton() {
         >
           <div className="pointer-events-auto bg-white/80 backdrop-blur-md px-6 py-4 rounded-full shadow-lg border border-gray-100">
             <a href="#preorder" className="btn-primary">
-              Reserve EDGE Now →
+              Pre-Order EDGE Now →
             </a>
           </div>
         </motion.div>

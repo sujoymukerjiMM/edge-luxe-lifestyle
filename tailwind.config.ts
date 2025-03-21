@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -137,6 +136,10 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'scroll': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' },
 				}
 			},
 			animation: {
@@ -147,10 +150,12 @@ export default {
 				'scale-in': 'scale-in 0.4s ease-out',
 				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				'rotate-slow': 'rotate-slow 15s linear infinite',
-				'shimmer': 'shimmer 2s infinite'
+				'shimmer': 'shimmer 2s infinite',
+				'scroll': 'scroll 25s linear infinite',
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif']
+				sans: ['Figtree', 'sans-serif'],
+				figtree: ['Figtree', 'sans-serif']
 			}
 		}
 	},

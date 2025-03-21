@@ -1,47 +1,41 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Truck, Lock } from "lucide-react";
+import { LockIcon, ShieldCheck, Truck } from "lucide-react";
 
 export default function TrustBadges() {
   const badges = [
     {
-      icon: <Lock className="h-5 w-5" />,
-      text: "Secure Payment",
+      icon: <LockIcon className="h-5 w-5" />,
+      label: "Secure Payment"
     },
     {
       icon: <ShieldCheck className="h-5 w-5" />,
-      text: "Privacy Guaranteed",
+      label: "Privacy Guaranteed"
     },
     {
       icon: <Truck className="h-5 w-5" />,
-      text: "Discreet Shipping",
-    },
+      label: "Discreet Shipping"
+    }
   ];
 
   return (
-    <div className="mt-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="flex flex-row items-center justify-center gap-8 md:gap-16 flex-wrap"
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+      className="mt-12"
+    >
+      <div className="flex flex-row flex-wrap justify-center items-center gap-4 md:gap-10">
         {badges.map((badge, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
-            className="flex flex-col items-center"
-          >
-            <div className="w-10 h-10 bg-yellow/10 rounded-full flex items-center justify-center mb-2">
-              {badge.icon}
+          <div key={index} className="flex items-center">
+            <div className="w-10 h-10 rounded-full bg-yellow/10 flex items-center justify-center mr-3">
+              <span className="text-yellow">{badge.icon}</span>
             </div>
-            <span className="text-sm font-medium">{badge.text}</span>
-          </motion.div>
+            <span className="text-sm">{badge.label}</span>
+          </div>
         ))}
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 }

@@ -16,7 +16,7 @@ export default function PreOrder() {
             Limited Release: Only 1,287 Units Available
           </h2>
           <p className="text-charcoal/80 text-lg mb-10">
-            EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Reserve yours now to avoid disappointment.
+            EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Pre-order yours now to avoid disappointment.
           </p>
           
           <div className="p-8 bg-gray-50 rounded-xl shadow-sm border border-gray-100 mb-8">
@@ -28,7 +28,7 @@ export default function PreOrder() {
               </div>
             </div>
             <a href="#" className="btn-primary text-lg px-8 py-4 shine-effect">
-              Reserve EDGE Now →
+              Pre-Order EDGE Now →
             </a>
             <p className="text-sm text-charcoal/60 mt-4">
               Ships in plain packaging. No payment charged until product ships. Estimated delivery: 3-4 weeks.

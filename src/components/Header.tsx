@@ -41,7 +41,7 @@ export default function Header() {
           href="#preorder"
           className="btn-primary text-sm md:text-base animate-fade-in"
         >
-          Reserve Now
+          Pre-Order Now
         </a>
       </div>
     </header>
