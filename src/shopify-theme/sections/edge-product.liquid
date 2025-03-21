@@ -6,7 +6,7 @@
         <a href="/" class="logo-link">
           <img src="{{ 'mymuse-logo.png' | asset_url }}" alt="{{ shop.name }}" class="logo">
         </a>
-        <a href="#preorder" class="btn-primary">Reserve Now</a>
+        <a href="#preorder" class="btn-primary">Pre-Order Now</a>
       </div>
     </div>
   </div>
@@ -42,7 +42,10 @@
         <div class="animation-grid">
           <div class="animation-item">
             <div class="animation-media">
-              <img src="{{ 'product-animation-1.jpg' | asset_url }}" alt="Multiple Vibration Patterns">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-1.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-1.jpg' | asset_url }}" alt="Multiple Vibration Patterns">
+              </video>
             </div>
             <div class="animation-caption">
               <p>Multiple Vibration Patterns</p>
@@ -50,7 +53,10 @@
           </div>
           <div class="animation-item">
             <div class="animation-media">
-              <img src="{{ 'product-animation-2.jpg' | asset_url }}" alt="Premium Soft-Touch Material">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-2.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-2.jpg' | asset_url }}" alt="Premium Soft-Touch Material">
+              </video>
             </div>
             <div class="animation-caption">
               <p>Premium Soft-Touch Material</p>
@@ -58,7 +64,10 @@
           </div>
           <div class="animation-item">
             <div class="animation-media">
-              <img src="{{ 'product-animation-3.jpg' | asset_url }}" alt="Discreet & Portable Design">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-3.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-3.jpg' | asset_url }}" alt="Discreet & Portable Design">
+              </video>
             </div>
             <div class="animation-caption">
               <p>Discreet & Portable Design</p>
@@ -72,11 +81,39 @@
           <span>A S &nbsp;&nbsp;S E E N&nbsp;&nbsp; I N :</span>
         </div>
         <div class="as-seen-logos">
-          <div class="logo-container">
-            <span class="brand-logo">Femina</span>
-            <span class="brand-logo">LBB</span>
-            <span class="brand-logo">Vogue</span>
-            <span class="brand-logo">Forbes</span>
+          <div class="logo-scroll">
+            <div class="logo-scroll-inner">
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Femina</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">LBB</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Vogue</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Forbes</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">GQ</text>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +124,7 @@
       <form method="post" action="/cart/add" id="product-form-{{ product.id }}">
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
         <button type="submit" class="btn-primary shine-effect">
-          Reserve EDGE Now →
+          Pre-Order Now →
         </button>
       </form>
       
@@ -105,6 +142,34 @@
         <div class="trust-badge">
           <div class="badge-icon">{% render 'icon-truck' %}</div>
           <span>Discreet Shipping</span>
+        </div>
+      </div>
+      
+      <!-- Additional Product Media -->
+      <div class="product-media-grid">
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-1.jpg' | asset_url }}" alt="EDGE Device - Detail View" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <video autoplay muted loop playsinline>
+            <source src="{{ 'product-detail-2.mp4' | asset_url }}" type="video/mp4">
+            <img src="{{ 'product-detail-2.jpg' | asset_url }}" alt="EDGE Device - In Action" loading="lazy">
+          </video>
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-3.jpg' | asset_url }}" alt="EDGE Device - Close Up" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <video autoplay muted loop playsinline>
+            <source src="{{ 'product-detail-4.mp4' | asset_url }}" type="video/mp4">
+            <img src="{{ 'product-detail-4.jpg' | asset_url }}" alt="EDGE Device - Feature Demo" loading="lazy">
+          </video>
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-5.jpg' | asset_url }}" alt="EDGE Device - Packaging" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-6.jpg' | asset_url }}" alt="EDGE Device - Size Comparison" loading="lazy">
         </div>
       </div>
     </div>
@@ -206,7 +271,18 @@
           <div class="testimonial-content">
             <div class="rating">★★★★★</div>
             <p class="testimonial-text">"The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation."</p>
-            <p class="author">– Vihaan K., Mumbai, Verified Purchase (March 2023)</p>
+            <div class="testimonial-meta">
+              <p class="author">– Vihaan K., Mumbai</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">March 2023</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -216,7 +292,18 @@
           <div class="testimonial-content">
             <div class="rating">★★★★★</div>
             <p class="testimonial-text">"The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention."</p>
-            <p class="author">– Dev M., Bangalore, Verified Purchase (January 2023)</p>
+            <div class="testimonial-meta">
+              <p class="author">– Dev M., Bangalore</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">January 2023</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -226,14 +313,25 @@
           <div class="testimonial-content">
             <div class="rating">★★★★½</div>
             <p class="testimonial-text">"I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge."</p>
-            <p class="author">– Kunal S., Delhi, Verified Purchase (April 2023)</p>
+            <div class="testimonial-meta">
+              <p class="author">– Kunal S., Delhi</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">April 2023</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
       <div class="waitlist-cta">
         <p class="waitlist-headline">⭐ Sold out twice since launch. Exactly 5,764 people on the current waitlist.</p>
-        <a href="#preorder" class="btn-secondary shine-effect">Join the Waitlist →</a>
+        <a href="#preorder" class="btn-secondary shine-effect">Pre-Order Now →</a>
       </div>
     </div>
   </div>
@@ -320,11 +418,15 @@
       <p>EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Reserve yours now to avoid disappointment.</p>
       
       <div class="preorder-card">
-        <div class="checkmark-icon">{% render 'icon-check' %}</div>
+        <div class="checkmark-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
         <form method="post" action="/cart/add" id="product-form-footer-{{ product.id }}">
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
           <button type="submit" class="btn-primary shine-effect">
-            Reserve EDGE Now →
+            Pre-Order Now →
           </button>
         </form>
         <p class="small-text">Ships in plain packaging. No payment charged until product ships. Estimated delivery: 3-4 weeks.</p>
@@ -337,7 +439,7 @@
   </div>
   
   <div class="sticky-button">
-    <a href="#preorder" class="btn-primary">Reserve EDGE Now →</a>
+    <a href="#preorder" class="btn-primary">Pre-Order Now →</a>
   </div>
 </div>
 
@@ -418,6 +520,40 @@
       "type": "image_picker",
       "id": "feature_image_4",
       "label": "Feature Image 4"
+    },
+    {
+      "type": "header",
+      "content": "Product Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_1",
+      "label": "Product Detail Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_2",
+      "label": "Product Detail Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_3",
+      "label": "Product Detail Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_4",
+      "label": "Product Detail Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_5",
+      "label": "Product Detail Image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_detail_6",
+      "label": "Product Detail Image 6"
     }
   ],
   "presets": [

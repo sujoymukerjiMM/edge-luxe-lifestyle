@@ -1,5 +1,7 @@
+
 :root {
   --off-white: #F8F6F3;
+  --pearl-white: #F5F3F0;
   --grey-light: #E5E5E5;
   --grey-medium: #CFCFCF;
   --charcoal: #2D2D2D;
@@ -9,8 +11,8 @@
 
 /* Basic Styling */
 .edge-product-container {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--off-white);
+  font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--pearl-white);
   color: var(--charcoal);
   line-height: 1.6;
 }
@@ -24,6 +26,7 @@
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -0.01em;
+  font-family: 'Figtree', sans-serif;
 }
 
 h1 {
@@ -55,7 +58,7 @@ p {
   z-index: 50;
   padding: 1rem 0;
   transition: all 0.3s ease;
-  background-color: rgba(248, 246, 243, 0.8);
+  background-color: rgba(245, 243, 240, 0.8);
   backdrop-filter: blur(8px);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
@@ -205,7 +208,8 @@ p {
   overflow: hidden;
 }
 
-.animation-media img {
+.animation-media img, 
+.animation-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -252,35 +256,43 @@ p {
   overflow: hidden;
 }
 
-.logo-container {
+.logo-scroll {
   display: flex;
-  justify-content: space-around;
+  gap: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+}
+
+.logo-scroll-inner {
+  display: flex;
+  gap: 40px;
+  animation: scrollLogos 20s linear infinite;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-placeholder {
+  display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0.5rem;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
-.brand-logo {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.brand-logo:nth-child(1) {
-  font-family: serif;
-  font-size: 1.4rem;
-}
-
-.brand-logo:nth-child(2) {
-  font-weight: 800;
-}
-
-.brand-logo:nth-child(3) {
-  font-family: serif;
-  font-style: italic;
-  letter-spacing: 0.15em;
-  font-size: 1.8rem;
+.logo-placeholder svg {
+  fill: white;
+  height: 24px;
+  width: auto;
 }
 
 .product-image-container {
@@ -321,6 +333,14 @@ p {
   flex-direction: column;
   align-items: center;
   font-size: 0.875rem;
+}
+
+@media (max-width: 767px) {
+  .trust-badges {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 }
 
 .badge-icon {
@@ -597,7 +617,7 @@ p {
 /* Testimonials Section */
 .testimonials-section {
   padding: 5rem 0;
-  background-color: var(--off-white);
+  background-color: var(--pearl-white);
 }
 
 .testimonial-grid {
@@ -655,9 +675,44 @@ p {
   flex-grow: 1;
 }
 
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-right: 0.5rem;
+}
+
+.verified-badge svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 .author {
   font-weight: 500;
   font-size: 0.875rem;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meta-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.testimonial-date {
+  color: rgba(45, 45, 45, 0.5);
+  font-size: 0.75rem;
 }
 
 .waitlist-cta {
@@ -721,14 +776,6 @@ p {
     font-size: 1.5rem;
   }
   
-  .trust-badges {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
   .sticky-button {
     bottom: 1rem;
   }
@@ -736,4 +783,40 @@ p {
   .preorder-card {
     padding: 1.5rem;
   }
+}
+
+/* Additional product images and media grid */
+.product-media-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 56rem;
+}
+
+@media (min-width: 640px) {
+  .product-media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-media-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-media-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  aspect-ratio: 1/1;
+}
+
+.product-media-item img,
+.product-media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
