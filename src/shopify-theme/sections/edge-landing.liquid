@@ -1,0 +1,630 @@
+
+<div class="edge-product-container">
+  <div class="edge-header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo-link">
+          <img src="{{ 'mymuse-logo.png' | asset_url }}" alt="{{ shop.name }}" class="logo">
+        </a>
+        <div class="header-actions">
+          <div class="theme-toggle">
+            {% render 'icon-sun' %}
+            {% render 'toggle-switch', id: 'theme-mode', label: 'Dark Mode' %}
+          </div>
+          <a href="#preorder" class="btn-primary">Pre-Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-section">
+    <div class="container">
+      <span class="limited-tag shine-effect">LIMITED PREORDER</span>
+      <h1>EDGE | Advanced Self-Care Device for Men</h1>
+      <p class="hero-subtitle">Engineered for exceptional comfort with advanced vibration technology.</p>
+      
+      <div class="product-carousel">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            {% for i in (1..8) %}
+              <div class="carousel-slide">
+                <img 
+                  src="{{ 'product-image-' | append: i | append: '.jpg' | asset_url }}" 
+                  alt="EDGE Device - View {{ i }}" 
+                  class="product-image"
+                  {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}
+                >
+              </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-prev">{% render 'icon-chevron-left' %}</button>
+          <button class="carousel-next">{% render 'icon-chevron-right' %}</button>
+        </div>
+      </div>
+      
+      <!-- Product Animation Showcase -->
+      <div class="product-animation-showcase">
+        <h2 class="animation-title">Experience the Innovation</h2>
+        <div class="animation-grid">
+          <div class="animation-item">
+            <div class="animation-media">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-1.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-1.jpg' | asset_url }}" alt="Multiple Vibration Patterns">
+              </video>
+            </div>
+            <div class="animation-caption">
+              <p>Multiple Vibration Patterns</p>
+            </div>
+          </div>
+          <div class="animation-item">
+            <div class="animation-media">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-2.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-2.jpg' | asset_url }}" alt="Premium Soft-Touch Material">
+              </video>
+            </div>
+            <div class="animation-caption">
+              <p>Premium Soft-Touch Material</p>
+            </div>
+          </div>
+          <div class="animation-item">
+            <div class="animation-media">
+              <video autoplay muted loop playsinline>
+                <source src="{{ 'product-animation-3.mp4' | asset_url }}" type="video/mp4">
+                <img src="{{ 'product-animation-3.jpg' | asset_url }}" alt="Discreet & Portable Design">
+              </video>
+            </div>
+            <div class="animation-caption">
+              <p>Discreet & Portable Design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="as-seen-in">
+        <div class="as-seen-header">
+          <span>A S &nbsp;&nbsp;S E E N&nbsp;&nbsp; I N :</span>
+        </div>
+        <div class="as-seen-logos">
+          <div class="logo-scroll">
+            <div class="logo-scroll-inner">
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Femina</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">LBB</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Vogue</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Forbes</text>
+                </svg>
+              </div>
+              <div class="logo-placeholder">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10h80v20h-80z"/>
+                  <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12">GQ</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="font-medium">Successfully sold out in two previous releases. EDGE is now available for limited preorders.</p>
+      <p class="text-description">A premium personal wellness device designed to enhance your self-care routine — with complete discretion.</p>
+      
+      <form method="post" action="/cart/add" id="product-form-main">
+        <input type="hidden" name="id" value="{{ settings.edge_product_variant_id }}">
+        <button type="submit" class="btn-primary shine-effect">
+          Pre-Order Now →
+        </button>
+      </form>
+      
+      <p class="small-text">Preorder today. Only 1,287 units available. Ships in unmarked packaging.</p>
+      
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-lock' %}</div>
+          <span>Secure Payment</span>
+        </div>
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-shield' %}</div>
+          <span>Privacy Guaranteed</span>
+        </div>
+        <div class="trust-badge">
+          <div class="badge-icon">{% render 'icon-truck' %}</div>
+          <span>Discreet Shipping</span>
+        </div>
+      </div>
+      
+      <!-- Additional Product Media -->
+      <div class="product-media-grid">
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-1.jpg' | asset_url }}" alt="EDGE Device - Detail View" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <video autoplay muted loop playsinline>
+            <source src="{{ 'product-detail-2.mp4' | asset_url }}" type="video/mp4">
+            <img src="{{ 'product-detail-2.jpg' | asset_url }}" alt="EDGE Device - In Action" loading="lazy">
+          </video>
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-3.jpg' | asset_url }}" alt="EDGE Device - Close Up" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <video autoplay muted loop playsinline>
+            <source src="{{ 'product-detail-4.mp4' | asset_url }}" type="video/mp4">
+            <img src="{{ 'product-detail-4.jpg' | asset_url }}" alt="EDGE Device - Feature Demo" loading="lazy">
+          </video>
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-5.jpg' | asset_url }}" alt="EDGE Device - Packaging" loading="lazy">
+        </div>
+        <div class="product-media-item">
+          <img src="{{ 'product-detail-6.jpg' | asset_url }}" alt="EDGE Device - Size Comparison" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="container">
+      <h2>Precision Engineering Meets Personal Wellness</h2>
+      <p>EDGE combines a soft, premium silicone exterior with 10 carefully calibrated vibration patterns. The 360° wraparound design and easy-maintenance features make this the most advanced addition to your self-care collection.</p>
+      
+      <!-- Features Carousel -->
+      <div class="features-carousel">
+        <div class="features-carousel-container">
+          <div class="features-carousel-track">
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-vibrate' %}</div>
+                <h3>Dual-Technology Innovation</h3>
+                <p>Premium soft-touch material with integrated vibration technology offering a uniquely comfortable experience.</p>
+              </div>
+              <img src="{{ 'feature-1.jpg' | asset_url }}" alt="Dual-Technology Innovation" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-droplets' %}</div>
+                <h3>Hygienic Design</h3>
+                <p>Open-ended structure with water-resistant materials allows for thorough cleaning and proper maintenance.</p>
+              </div>
+              <img src="{{ 'feature-2.jpg' | asset_url }}" alt="Hygienic Design" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-shield' %}</div>
+                <h3>Privacy-Focused Design</h3>
+                <p>Protective case and compact form factor (just 15.3cm × 6.8cm) ensures discretion and convenient storage.</p>
+              </div>
+              <img src="{{ 'feature-3.jpg' | asset_url }}" alt="Privacy-Focused Design" class="feature-image">
+            </div>
+            <div class="feature-slide">
+              <div class="feature-slide-content">
+                <div class="feature-icon">{% render 'icon-sliders' %}</div>
+                <h3>Customizable Experience</h3>
+                <p>10 precisely engineered intensity settings from gentle (27Hz) to powerful (82Hz) for a personalized experience.</p>
+              </div>
+              <img src="{{ 'feature-4.jpg' | asset_url }}" alt="Customizable Experience" class="feature-image">
+            </div>
+          </div>
+          <button class="feature-carousel-prev">{% render 'icon-chevron-left' %}</button>
+          <button class="feature-carousel-next">{% render 'icon-chevron-right' %}</button>
+        </div>
+      </div>
+      
+      <!-- Technical Specifications -->
+      <div class="tech-specs">
+        <h3>Technical Specifications</h3>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-vibrate' %}</div>
+            <div class="spec-content">
+              <h4>Vibration Range</h4>
+              <p>27Hz (gentle) to 82Hz (intense) with 10 unique patterns</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-shield' %}</div>
+            <div class="spec-content">
+              <h4>Material</h4>
+              <p>Medical-grade silicone with soft-touch texture</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-droplets' %}</div>
+            <div class="spec-content">
+              <h4>Water Resistance</h4>
+              <p>IPX7 rated for easy cleaning and maintenance</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-icon">{% render 'icon-sliders' %}</div>
+            <div class="spec-content">
+              <h4>Dimensions</h4>
+              <p>15.3cm × 6.8cm, compact and discreet design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonials-section">
+    <div class="container">
+      <h2>India's Top-Rated Self-Care Device for Men — Now Back by Popular Demand</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-1.jpg' | asset_url }}" alt="Customer 1">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">"The ergonomic design and adjustable settings make this far more comfortable than anything I've tried before. The soft material combined with the vibration options creates an experience that's genuinely enjoyable for relaxation."</p>
+            <div class="testimonial-meta">
+              <p class="author">– Vihaan K., Mumbai</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">March 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-2.jpg' | asset_url }}" alt="Customer 2">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">"The discreet packaging was impressive - arrived in a plain box with no identifying information. The device itself has a sleek, modern design that looks like any other wellness gadget. Perfect for travel and storage without drawing attention."</p>
+            <div class="testimonial-meta">
+              <p class="author">– Dev M., Bangalore</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">January 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="{{ 'testimonial-3.jpg' | asset_url }}" alt="Customer 3">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">★★★★½</div>
+            <p class="testimonial-text">"I've tried both previous MyMuse products, and this one combines the best features of both. The texture is comfortable while the vibration options provide a range of intensity levels. Battery life is excellent at 2.5 hours per charge."</p>
+            <div class="testimonial-meta">
+              <p class="author">– Kunal S., Delhi</p>
+              <div class="meta-details">
+                <span class="verified-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>Verified</span>
+                </span>
+                <span class="testimonial-date">April 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="waitlist-cta">
+        <p class="waitlist-headline">⭐ Sold out twice since launch. Exactly 5,764 people on the current waitlist.</p>
+        <a href="#preorder" class="btn-secondary shine-effect">Pre-Order Now →</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="technology-section">
+    <div class="container">
+      <h2>Advanced Technology for Modern Self-Care</h2>
+      <p>EDGE represents a new standard in personal wellness devices for men. Our most sophisticated design combines:</p>
+      
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Premium Comfort Materials</h3>
+            <p>Medical-grade silicone with precisely engineered texture patterns for optimal comfort during extended use.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Multi-pattern Technology</h3>
+            <p>10 distinct sensation patterns with adjustable intensity levels, from subtle (27Hz) to powerful (82Hz).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Ergonomic Design</h3>
+            <p>360° form-fitting design with flexibility to accommodate different preferences and ensure complete comfort.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Practical Maintenance</h3>
+            <p>Water-resistant design (IPX7 rated) for thorough cleaning and long-term durability.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="specs-table">
+        <div class="spec-row">
+          <div class="spec-label">Materials</div>
+          <div class="spec-value">Body-safe silicone sleeve + ABS case (BPA-free)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Battery</div>
+          <div class="spec-value">1200mAh Li-ion rechargeable (USB-C, 2.5 hour runtime)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Sound Level</div>
+          <div class="spec-value">Ultra-quiet (≤40dB at maximum setting)</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Dimensions</div>
+          <div class="spec-value">15.3cm × 6.8cm, 187g, travel-sized with matte black finish</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Warranty</div>
+          <div class="spec-value">12-month manufacturer's warranty against defects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="lifestyle-section">
+    <div class="container">
+      <div class="lifestyle-container">
+        <div class="lifestyle-content">
+          <h2>Modern Technology for Your Wellness Routine</h2>
+          <p>You update your smartphone. You upgrade your fitness tracker. EDGE helps you enhance your personal care routine with the same attention to quality and innovation — with complete privacy and confidence.</p>
+          <p class="highlight-text">Our 98.3% satisfaction rating from 3,426 verified customers speaks to our commitment to quality and discretion.</p>
+        </div>
+        <div class="lifestyle-image">
+          <img src="{{ 'lifestyle-edge.jpg' | asset_url }}" alt="Modern Lifestyle">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="preorder" class="preorder-section">
+    <div class="container">
+      <h2>Limited Release: Only 1,287 Units Available</h2>
+      <p>EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Reserve yours now to avoid disappointment.</p>
+      
+      <div class="preorder-card">
+        <div class="checkmark-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
+        <form method="post" action="/cart/add" id="product-form-footer">
+          <input type="hidden" name="id" value="{{ settings.edge_product_variant_id }}">
+          <button type="submit" class="btn-primary shine-effect">
+            Pre-Order Now →
+          </button>
+        </form>
+        <p class="small-text">Ships in plain packaging. No payment charged until product ships. Estimated delivery: 3-4 weeks.</p>
+      </div>
+      
+      <p class="terms-text">
+        By ordering, you agree to our <a href="/pages/terms-of-service">Terms of Service</a> and <a href="/pages/privacy-policy">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+  
+  <div class="sticky-button">
+    <a href="#preorder" class="btn-primary">Pre-Order Now →</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Dark mode toggle functionality
+  const themeToggle = document.getElementById('theme-mode');
+  
+  // Check for saved theme preference or respect OS preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Apply dark mode if preference exists
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.body.classList.add('dark-mode');
+    themeToggle.checked = true;
+  }
+  
+  // Toggle theme when switch is clicked
+  themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // Product Carousel Functionality
+  const carousel = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  let currentIndex = 0;
+  let maxIndex = slides.length - 1;
+
+  function goToSlide(index) {
+    if (index < 0) {
+      index = maxIndex;
+    } else if (index > maxIndex) {
+      index = 0;
+    }
+    currentIndex = index;
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+  });
+
+  // Features Carousel Functionality
+  const featuresCarousel = document.querySelector('.features-carousel-track');
+  const featureSlides = document.querySelectorAll('.feature-slide');
+  const featurePrevBtn = document.querySelector('.feature-carousel-prev');
+  const featureNextBtn = document.querySelector('.feature-carousel-next');
+  let featureCurrentIndex = 0;
+  let featureMaxIndex = Math.ceil(featureSlides.length / 2) - 1;
+
+  function goToFeatureSlide(index) {
+    if (index < 0) {
+      index = featureMaxIndex;
+    } else if (index > featureMaxIndex) {
+      index = 0;
+    }
+    featureCurrentIndex = index;
+    
+    // On mobile, show one slide at a time
+    if (window.innerWidth < 768) {
+      featuresCarousel.style.transform = `translateX(-${featureCurrentIndex * 100}%)`;
+    } else {
+      // On desktop, show two slides at a time
+      featuresCarousel.style.transform = `translateX(-${featureCurrentIndex * 100}%)`;
+    }
+  }
+
+  featurePrevBtn.addEventListener('click', () => {
+    goToFeatureSlide(featureCurrentIndex - 1);
+  });
+
+  featureNextBtn.addEventListener('click', () => {
+    goToFeatureSlide(featureCurrentIndex + 1);
+  });
+
+  // Handle window resize for responsive carousels
+  window.addEventListener('resize', () => {
+    // Recalculate feature slides per view
+    featureMaxIndex = window.innerWidth < 768 ? featureSlides.length - 1 : Math.ceil(featureSlides.length / 2) - 1;
+    goToFeatureSlide(0);
+    
+    // Reset main carousel
+    goToSlide(0);
+  });
+
+  // Smooth scroll for anchor links
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Offset for header
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Sticky Header
+  const header = document.querySelector('.edge-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "EDGE Landing Page",
+  "settings": [
+    {
+      "type": "product",
+      "id": "edge_product",
+      "label": "EDGE Product"
+    },
+    {
+      "type": "text",
+      "id": "edge_product_variant_id",
+      "label": "Product Variant ID",
+      "info": "ID of the variant to add to cart"
+    },
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "Limited Tag Text",
+      "default": "LIMITED PREORDER"
+    },
+    {
+      "type": "header",
+      "content": "Units Available"
+    },
+    {
+      "type": "number",
+      "id": "units_available",
+      "label": "Units Available",
+      "default": 1287
+    },
+    {
+      "type": "number",
+      "id": "waitlist_count",
+      "label": "Waitlist Count",
+      "default": 5764
+    },
+    {
+      "type": "header",
+      "content": "Media Files",
+      "info": "Upload all required media files to the asset folder"
+    }
+  ],
+  "presets": [
+    {
+      "name": "EDGE Landing Page",
+      "category": "Custom Pages"
+    }
+  ]
+}
+{% endschema %}
