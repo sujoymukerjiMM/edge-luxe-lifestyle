@@ -1,6 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Reviews() {
   return (
@@ -73,12 +74,17 @@ export default function Reviews() {
               
               <div className="mt-6 grid grid-cols-3 gap-2">
                 {[...Array(9)].map((_, i) => (
-                  <div key={i} className="aspect-square bg-gray-100 rounded-md overflow-hidden">
-                    <img 
-                      src={`https://d3g5hqndtiniji.cloudfront.net/images/8aad07d8-99d9-48ed-bff3-477a000140df/placeholder-${i+1}.jpg`} 
-                      alt="Customer review" 
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                    />
+                  <div key={i} className="aspect-square rounded-md overflow-hidden">
+                    <Avatar className="w-full h-full rounded-full border border-gray-200">
+                      <AvatarImage 
+                        src={`https://d3g5hqndtiniji.cloudfront.net/images/8aad07d8-99d9-48ed-bff3-477a000140df/placeholder-${i+1}.jpg`} 
+                        alt="Customer review" 
+                        className="w-full h-full object-cover"
+                      />
+                      <AvatarFallback className="bg-gray-100 text-charcoal">
+                        {String.fromCharCode(65 + i)}
+                      </AvatarFallback>
+                    </Avatar>
                   </div>
                 ))}
               </div>
