@@ -377,17 +377,35 @@
       <p>EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Reserve yours now to avoid disappointment.</p>
       
       <div class="preorder-card">
-        <div class="checkmark-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6 9 17l-5-5"></path>
-          </svg>
+        <div class="preorder-flex">
+          <!-- Product Image -->
+          <div class="preorder-product-image">
+            <img src="{{ 'edge-product-main.jpg' | asset_url }}" alt="EDGE Device" class="product-image">
+          </div>
+          
+          <!-- Price and CTA -->
+          <div class="preorder-product-details">
+            <div class="price-container">
+              <div class="current-price">₹3199</div>
+              <div class="original-price">₹4999</div>
+              <div class="discount-badge">36% OFF</div>
+            </div>
+            
+            <div class="checkmark-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </div>
+            
+            <form method="post" action="/cart/add" id="product-form-footer">
+              <input type="hidden" name="id" value="{{ settings.edge_product_variant_id }}">
+              <button type="submit" class="btn-primary shine-effect">
+                Pre-Order Now →
+              </button>
+            </form>
+          </div>
         </div>
-        <form method="post" action="/cart/add" id="product-form-footer">
-          <input type="hidden" name="id" value="{{ settings.edge_product_variant_id }}">
-          <button type="submit" class="btn-primary shine-effect">
-            Pre-Order Now →
-          </button>
-        </form>
+        
         <p class="small-text">Ships in plain packaging. No payment charged until product ships. Estimated delivery: 3-4 weeks.</p>
       </div>
       
@@ -398,7 +416,17 @@
   </div>
   
   <div class="sticky-button">
-    <a href="#preorder" class="btn-primary">Pre-Order Now →</a>
+    <div class="sticky-button-content">
+      <div class="sticky-product-image">
+        <img src="{{ 'edge-product-thumb.jpg' | asset_url }}" alt="EDGE Device">
+      </div>
+      <div class="sticky-price">
+        <span class="current-price">₹3199</span>
+        <span class="original-price">₹4999</span>
+        <span class="discount-badge">36% OFF</span>
+      </div>
+      <a href="#preorder" class="btn-primary">Pre-Order Now →</a>
+    </div>
   </div>
 </div>
 
