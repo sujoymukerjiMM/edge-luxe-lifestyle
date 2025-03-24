@@ -47,12 +47,6 @@ export default function StickyButton() {
               />
             </div>
             
-            <div className="hidden md:flex items-center">
-              <div className="font-bold">₹3199</div>
-              <div className="text-xs text-charcoal/60 line-through ml-1">₹4999</div>
-              <div className="bg-yellow-300 text-xs text-charcoal font-semibold px-2 py-0.5 rounded ml-1">36% OFF</div>
-            </div>
-            
             <a href="#preorder" className="btn-primary">
               Pre-Order EDGE Now →
             </a>

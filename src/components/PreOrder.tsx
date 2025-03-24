@@ -32,12 +32,6 @@ export default function PreOrder() {
               
               {/* CTA */}
               <div className="w-full md:w-2/3 flex flex-col items-center md:items-start">
-                <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                
                 <a href="#" className="btn-primary text-lg px-8 py-4 shine-effect w-full md:w-auto">
                   Pre-Order EDGE Now →
                 </a>
