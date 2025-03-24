@@ -90,6 +90,12 @@ export default function Hero() {
             A premium personal wellness device designed to enhance your self-care routine — with complete discretion.
           </p>
 
+          <div className="flex items-center justify-center mb-8">
+            <div className="text-3xl font-bold text-charcoal">₹3199</div>
+            <div className="text-lg text-charcoal/60 line-through ml-2">₹4999</div>
+            <div className="bg-yellow-300 text-charcoal font-semibold px-3 py-1 rounded ml-2">36% OFF</div>
+          </div>
+
           <a href="#preorder" className="btn-primary px-8 py-4 text-base md:text-lg shine-effect">
             Pre-Order EDGE Now →
           </a>
