@@ -19,6 +19,12 @@ export default function PreOrder() {
             EDGE has consistently sold out with each release. This limited production run ensures the highest quality standards are maintained. Pre-order yours now to avoid disappointment.
           </p>
           
+          <div className="flex items-center justify-center mb-8">
+            <div className="text-3xl font-bold text-charcoal">₹3199</div>
+            <div className="text-lg text-charcoal/60 line-through ml-2">₹4999</div>
+            <div className="bg-yellow-300 text-charcoal font-semibold px-3 py-1 rounded ml-2">36% OFF</div>
+          </div>
+          
           <div className="p-8 bg-gray-50 rounded-xl shadow-sm border border-gray-100 mb-8">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
               {/* Product Image */}
@@ -30,14 +36,8 @@ export default function PreOrder() {
                 />
               </div>
               
-              {/* Price and CTA */}
+              {/* CTA */}
               <div className="w-full md:w-2/3 flex flex-col items-center md:items-start">
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl font-bold text-charcoal">₹3199</div>
-                  <div className="text-lg text-charcoal/60 line-through ml-2">₹4999</div>
-                  <div className="bg-yellow-300 text-charcoal font-semibold px-3 py-1 rounded ml-2">36% OFF</div>
-                </div>
-                
                 <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mb-4">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
